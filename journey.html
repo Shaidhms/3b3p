@@ -1,0 +1,2090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>3B3P · The Master Keys — A 35-Day Program in Three Books, Three Practices</title>
+<meta name="description" content="A closed, invitation-only 35-day program of three books and three practices.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:        #F6F3EC;
+  --bg-warm:   #EDE7D6;
+  --bg-card:   #FFFEFA;
+  --paper:     #FFFFFF;
+  --ink:       #131418;
+  --ink-soft:  #2C2F37;
+  --ink-mute:  #6B7280;
+  --ink-faint: #B0B5BD;
+  --line:      #DBD4C3;
+  --line-soft: #E8E2D2;
+  --navy:      #1A2F5A;
+  --navy-mid:  #243C70;
+  --navy-deep: #0E1B3A;
+  --gold:      #A07628;
+  --gold-warm: #C9963B;
+  --gold-deep: #6B4E18;
+  --rust:      #9C3B23;
+  --vermilion: #9C3B23;
+  --emerald:   #1F4F47;
+
+  --display: 'Instrument Serif', 'Fraunces', 'Times New Roman', serif;
+  --display-alt: 'Fraunces', 'Times New Roman', serif;
+  --body:    'Inter', -apple-system, system-ui, sans-serif;
+  --mono:    'DM Mono', ui-monospace, monospace;
+
+  --container: 1200px;
+  --container-narrow: 880px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --gap: clamp(2.5rem, 5vw, 4.5rem);
+
+  --shadow-card: 0 1px 0 rgba(15,17,21,0.04), 0 14px 32px -18px rgba(15,17,21,0.18);
+  --shadow-lift: 0 1px 0 rgba(15,17,21,0.05), 0 28px 50px -24px rgba(15,17,21,0.26);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:var(--body);
+  font-weight:400;
+  font-size:16px;
+  line-height:1.6;
+  color:var(--ink);
+  background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  position: relative;
+}
+/* Subtle grain overlay for premium texture */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 99;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='320' viewBox='0 0 320 320'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  mix-blend-mode: multiply;
+}
+img{max-width:100%; display:block; height:auto}
+a{color:inherit; text-decoration:none}
+button{font:inherit; color:inherit; background:none; border:none; cursor:pointer}
+::selection{ background: var(--navy); color: var(--paper); }
+
+.container{
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+.container-narrow{
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* ---------- Type primitives ---------- */
+.eyebrow{
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1.1rem;
+}
+.eyebrow::before{
+  content:"";
+  display:inline-block;
+  width: 1.6rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.55;
+}
+.on-dark .eyebrow, .eyebrow.on-dark{ color: var(--gold-warm); }
+
+h1,h2,h3,h4{
+  font-family: var(--display);
+  font-weight: 400;
+  letter-spacing: -0.018em;
+  line-height: 1.05;
+  color: var(--ink);
+  margin: 0 0 1rem;
+}
+h1{
+  font-size: clamp(2.6rem, 6.2vw, 5.2rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1;
+}
+h2{
+  font-size: clamp(1.95rem, 4vw, 3.2rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+h3{ font-size: clamp(1.45rem, 2.5vw, 2rem); font-weight: 400; }
+h4{ font-size: 1.05rem; font-weight: 600; line-height: 1.3; font-family: var(--body); letter-spacing: -0.005em; }
+em.serif{ font-style: italic; color: var(--navy); font-weight: 400; }
+.accent{ color: var(--vermilion); font-style: italic; font-weight: 400; }
+
+p{ margin: 0 0 1.05rem; color: var(--ink-soft); font-size: 1rem; line-height: 1.65; }
+p.lede{ font-size: clamp(1.05rem, 1.4vw, 1.22rem); line-height: 1.55; color: var(--ink); }
+
+.body-on-dark p{ color: rgba(255, 250, 235, 0.84); }
+.body-on-dark h1, .body-on-dark h2, .body-on-dark h3{ color: #FBF7EC; }
+
+/* ---------- Buttons ---------- */
+.btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.95rem 1.6rem;
+  font-family: var(--body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+.btn-primary{ background: var(--navy); color: var(--paper); }
+.btn-primary:hover{ background: var(--navy-deep); transform: translateY(-1px); }
+.btn-ghost{ background: transparent; color: var(--ink); border-color: var(--ink); }
+.btn-ghost:hover{ background: var(--ink); color: var(--paper); }
+.btn-gold{ background: var(--gold); color: var(--navy-deep); }
+.btn-gold:hover{ background: var(--gold-warm); transform: translateY(-1px); }
+.btn .arrow{ display:inline-block; transition: transform 0.25s ease; }
+.btn:hover .arrow{ transform: translateX(3px); }
+
+/* ---------- Nav ---------- */
+nav.topnav{
+  position: sticky;
+  top: 0;
+  z-index: 80;
+  background: rgba(244, 239, 226, 0.86);
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  border-bottom: 1px solid var(--line-soft);
+}
+.nav-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0.9rem var(--gutter);
+  max-width: var(--container);
+  margin: 0 auto;
+}
+.nav-brand{ display: flex; align-items: baseline; gap: 0.8rem; }
+.nav-brand .logo{
+  font-family: var(--display);
+  font-weight: 700;
+  font-style: italic;
+  font-size: 1.35rem;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+}
+.nav-brand .sub{
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.nav-links{ display: none; gap: 1.6rem; align-items: center; }
+@media (min-width: 940px){ .nav-links{ display: flex; } }
+.nav-links a{
+  font-family: var(--body);
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  transition: color 0.2s ease;
+}
+.nav-links a:hover{ color: var(--navy); }
+.day-badge{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  background: var(--paper);
+}
+.day-badge strong{ color: var(--vermilion); font-weight: 600; }
+.day-badge .live-dot{
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--vermilion);
+  animation: live-pulse 2s ease-in-out infinite;
+}
+@keyframes live-pulse{
+  0%, 100%{ box-shadow: 0 0 0 0 rgba(181,54,42,0.5); }
+  50%{ box-shadow: 0 0 0 6px rgba(181,54,42,0); }
+}
+
+/* ---------- HERO (text-only, clean) ---------- */
+.hero{
+  position: relative;
+  padding: 5rem 0 4rem;
+  background:
+    radial-gradient(ellipse 70% 60% at 100% 0%, rgba(201, 150, 59, 0.18), transparent 60%),
+    radial-gradient(ellipse 50% 60% at 0% 100%, rgba(26, 47, 90, 0.10), transparent 60%),
+    var(--bg);
+  overflow: hidden;
+}
+.hero::before{
+  content:"";
+  position: absolute;
+  inset: -10%;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(156, 59, 35, 0.06), transparent 30%),
+    radial-gradient(circle at 80% 80%, rgba(31, 79, 71, 0.05), transparent 35%);
+  animation: hero-drift 18s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+@keyframes hero-drift{
+  0%   { transform: translate(0,0) scale(1); }
+  100% { transform: translate(20px, -10px) scale(1.05); }
+}
+@media (min-width: 820px){ .hero{ padding: 6.5rem 0 6rem; } }
+.hero-inner{ max-width: 60rem; }
+.hero h1{ margin: 1.2rem 0 1.5rem; }
+.hero h1 .em{ font-style: italic; font-weight: 400; color: var(--navy); }
+.hero .sub{
+  font-size: 1.18rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  max-width: 38rem;
+  margin: 0 0 2.2rem;
+}
+.hero .cta-row{ display: flex; flex-wrap: wrap; gap: 0.9rem; align-items: center; }
+.hero .meta-row{
+  display: flex; align-items: center; gap: 1rem;
+  margin-top: 2.5rem;
+  font-family: var(--mono);
+  font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink-mute); flex-wrap: wrap;
+}
+.hero .meta-row .sep{ width: 1px; height: 12px; background: var(--line); }
+
+/* ---------- Stats strip (dark) ---------- */
+.stats-strip{ background: var(--ink); color: var(--paper); padding: 1.6rem 0; }
+.stats-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem 2rem;
+  text-align: center;
+}
+@media (min-width: 720px){ .stats-grid{ grid-template-columns: repeat(5, 1fr); } }
+.stat .num{
+  font-family: var(--display);
+  font-size: 2.1rem; font-weight: 500;
+  color: var(--gold-warm);
+  line-height: 1;
+}
+.stat .num .unit{
+  font-size: 0.95rem; margin-left: 0.15em;
+  font-style: italic; color: var(--paper); font-weight: 400;
+}
+.stat .label{
+  margin-top: 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.64rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: rgba(255,250,235,0.65);
+}
+
+/* ---------- Generic block ---------- */
+section.block{ padding: 4.5rem 0; position: relative; }
+@media (min-width: 820px){ section.block{ padding: 6rem 0; } }
+
+.block-head{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+  margin-bottom: 3rem;
+  max-width: 64rem;
+}
+@media (min-width: 860px){
+  .block-head{ grid-template-columns: 1.1fr 1fr; gap: 4rem; align-items: end; }
+}
+.block-head h2{ margin: 0; }
+.block-head .lede{ margin: 0; color: var(--ink-soft); }
+
+/* ---------- The Feature split (image + text, alternating) ---------- */
+.feature{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+@media (min-width: 920px){
+  .feature{ grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+@media (min-width: 920px){
+  .feature.image-right .feature-text{ order: 1; }
+  .feature.image-right .feature-figure{ order: 2; }
+  .feature.image-left .feature-text{ order: 2; }
+  .feature.image-left .feature-figure{ order: 1; }
+}
+.feature + .feature{ margin-top: clamp(4rem, 8vw, 7rem); }
+
+/* Figure (image card) - the image is shown WHOLE */
+.feature-figure{
+  position: relative;
+  perspective: 1200px;
+}
+.figure-card{
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-style: preserve-3d;
+}
+.figure-card::before{
+  content:"";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, transparent 40%);
+  pointer-events: none;
+  z-index: 2;
+  border-radius: 14px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.figure-card:hover{
+  transform: translateY(-4px) rotateX(0.5deg) rotateY(-0.5deg);
+  box-shadow: var(--shadow-lift);
+}
+.figure-card:hover::before{ opacity: 1; }
+.figure-card::after{
+  content:"";
+  position: absolute;
+  inset: 5px;
+  border: 1px solid var(--line-soft);
+  pointer-events: none;
+  border-radius: 9px;
+}
+.figure-card img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.figure-card:hover img{ transform: scale(1.015); }
+.figure-meta{
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.figure-meta .num{ color: var(--vermilion); }
+
+/* Text column */
+.feature-text .role{
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  margin-bottom: 0.8rem;
+  display: inline-block;
+}
+.feature-text h2,
+.feature-text h3{
+  font-family: var(--display);
+  font-weight: 500;
+  font-style: italic;
+  color: var(--navy);
+  line-height: 1.08;
+}
+.feature-text h2{ font-size: clamp(1.85rem, 3.2vw, 2.6rem); margin: 0 0 1rem; }
+.feature-text h3{ font-size: clamp(1.4rem, 2.4vw, 1.85rem); margin: 0 0 1rem; }
+.feature-text .upright{ font-style: normal; color: var(--ink); }
+.feature-text p{ font-size: 1rem; color: var(--ink-soft); line-height: 1.65; }
+.feature-text .pill{
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--gold);
+  color: var(--gold-deep);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 1.4rem;
+}
+.feature-text .info-row{
+  margin-top: 1.6rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 1.5rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--line);
+}
+.feature-text .info-row dt{
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin: 0;
+}
+.feature-text .info-row dd{
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--navy);
+  margin: 0.25rem 0 0;
+  line-height: 1.25;
+}
+.feature-text .info-row dd .small{
+  display: block;
+  font-family: var(--body);
+  font-style: normal;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--ink-mute);
+  margin-top: 0.2rem;
+}
+.feature.dark .feature-text .info-row dd{ color: var(--paper); }
+.feature.dark .feature-text .info-row dd .small{ color: rgba(255,250,235,0.65); }
+
+/* dark feature variant — used for science / black sections */
+.feature.dark{ color: var(--paper); }
+.feature.dark .feature-text h2,
+.feature.dark .feature-text h3{ color: var(--paper); }
+.feature.dark .feature-text p{ color: rgba(255,250,235,0.82); }
+.feature.dark .feature-text .role{ color: var(--gold-warm); }
+.feature.dark .figure-card{
+  background: var(--paper);
+}
+.feature.dark .figure-meta{ color: rgba(255,250,235,0.65); }
+
+/* ---------- Dark section wrapper ---------- */
+.dark-section{
+  background: var(--ink);
+  color: var(--paper);
+}
+.dark-section h2{ color: var(--paper); }
+.dark-section .block-head .lede{ color: rgba(255,250,235,0.78); }
+
+/* ---------- Today card (Day 1 highlight) ---------- */
+.today-card{
+  background: var(--navy);
+  color: var(--paper);
+  border-radius: 18px;
+  padding: clamp(2rem, 4vw, 3.5rem);
+  box-shadow: var(--shadow-lift);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+  position: relative;
+  overflow: hidden;
+}
+@media (min-width: 820px){
+  .today-card{ grid-template-columns: 1.5fr 1fr; gap: 3rem; }
+}
+.today-card::before{
+  content:"";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 50% 60% at 100% 0%, rgba(215, 176, 92, 0.20), transparent 60%),
+    radial-gradient(ellipse 50% 60% at 0% 100%, rgba(181, 54, 42, 0.12), transparent 60%);
+  pointer-events: none;
+}
+.today-card > *{ position: relative; z-index: 1; }
+.today-card .eyebrow{ color: var(--gold-warm); margin-bottom: 1.2rem; }
+.today-card h2{
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--paper);
+  margin: 0 0 1.3rem;
+}
+.today-card h2 .upright{ font-style: normal; color: var(--paper); }
+.today-card .quote{
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(1.15rem, 1.7vw, 1.45rem);
+  line-height: 1.45;
+  color: var(--paper);
+  margin: 0 0 1.2rem;
+  padding-left: 1.1rem;
+  border-left: 2px solid var(--gold-warm);
+}
+.today-card .quote .attr{
+  display: block;
+  margin-top: 0.6rem;
+  font-family: var(--mono);
+  font-style: normal;
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-warm);
+}
+.today-card p.body{ color: rgba(255,250,235,0.85); margin: 0; }
+.today-meta{
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(215, 176, 92, 0.3);
+  border-radius: 12px;
+  padding: 1.4rem 1.5rem;
+  display: grid;
+  gap: 1rem;
+}
+.today-meta dt{
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-warm);
+  margin: 0;
+}
+.today-meta dd{
+  margin: 0.3rem 0 0;
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--paper);
+}
+.today-meta dd .small{
+  display: block;
+  font-family: var(--body);
+  font-style: normal;
+  font-size: 0.82rem;
+  color: rgba(255,250,235,0.7);
+  margin-top: 0.15rem;
+}
+
+/* ---------- Manifestation formula card ---------- */
+.formula-card{
+  margin-top: 2.2rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 2rem 1.6rem;
+  text-align: center;
+}
+.formula-row{
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  font-family: var(--display);
+  font-style: italic;
+  font-size: clamp(1.05rem, 1.8vw, 1.4rem);
+  font-weight: 500;
+}
+.formula-row .term{ color: var(--navy); border-bottom: 1px solid var(--gold); padding-bottom: 0.1em; }
+.formula-row .op{ color: var(--vermilion); font-family: var(--mono); font-style: normal; font-size: 0.9em; padding: 0 0.15em; }
+.formula-row .result{ color: var(--vermilion); }
+.formula-caption{
+  margin-top: 1.1rem;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+/* ---------- 35 day map ---------- */
+.map-block{ background: var(--bg-warm); }
+.map-grid{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-top: 2.5rem;
+  max-width: var(--container-narrow);
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 720px){ .map-grid{ grid-template-columns: repeat(5, 1fr); gap: 6px; } }
+@media (max-width: 480px){ .map-grid{ grid-template-columns: repeat(4, 1fr); } }
+.map-cell{
+  aspect-ratio: 1 / 1.05;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 0.6rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+}
+.map-cell .no{
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  line-height: 1;
+}
+.map-cell .session{
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  line-height: 1.25;
+}
+.map-cell.future{ background: transparent; border-style: dashed; border-color: var(--ink-faint); }
+.map-cell.future .no, .map-cell.future .session{ color: var(--ink-faint); }
+.map-cell.today{
+  background: var(--navy);
+  border-color: var(--navy);
+}
+.map-cell.today .no{ color: var(--gold-warm); }
+.map-cell.today .session{ color: rgba(255,250,235,0.85); }
+.map-cell.today::after{
+  content: "TODAY";
+  position: absolute;
+  top: 6px; right: 6px;
+  font-family: var(--mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.18em;
+  background: var(--vermilion);
+  color: var(--paper);
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+.map-cell.next{ background: var(--paper); border-color: var(--gold); border-width: 1.5px; }
+.map-cell.next .no{ color: var(--gold-deep); }
+.map-cell.milestone .no{ color: var(--vermilion); }
+.map-legend{
+  display: flex; justify-content: center;
+  gap: 2rem; margin-top: 2rem;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  flex-wrap: wrap;
+}
+.map-legend span{ display: inline-flex; align-items: center; gap: 0.55rem; }
+.map-legend i{
+  display: inline-block;
+  width: 12px; height: 12px;
+  border: 1px solid var(--ink-faint);
+  border-radius: 3px;
+}
+.map-legend i.today{ background: var(--navy); border-color: var(--navy); }
+.map-legend i.next{ background: var(--paper); border-color: var(--gold); border-width: 1.5px; }
+
+/* ---------- Precepts (Codex) ---------- */
+.precepts-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+  margin-top: 2.5rem;
+}
+@media (min-width: 760px){ .precepts-grid{ grid-template-columns: 1fr 1fr; gap: 1.3rem; } }
+@media (min-width: 1080px){ .precepts-grid{ grid-template-columns: repeat(3, 1fr); } }
+.precept{
+  background: var(--paper);
+  border: 1px solid var(--line-soft);
+  border-radius: 12px;
+  padding: 1.6rem 1.5rem;
+  box-shadow: var(--shadow-card);
+}
+.precept .n{
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.85rem;
+  font-weight: 500;
+  color: var(--gold);
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.85rem;
+}
+.precept h4{
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.15rem;
+  color: var(--navy);
+  margin: 0 0 0.6rem;
+  line-height: 1.2;
+}
+.precept p{ font-size: 0.9rem; line-height: 1.55; color: var(--ink-soft); margin: 0; }
+
+/* ---------- Founder ---------- */
+.founder-section{ background: var(--navy-deep); color: var(--paper); padding: 5rem 0; }
+.founder-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+@media (min-width: 820px){ .founder-grid{ grid-template-columns: 1fr 1.4fr; gap: 4.5rem; align-items: start; } }
+.founder-section h2{ color: var(--paper); font-style: italic; font-weight: 400; max-width: 24ch; margin: 1rem 0 2rem; }
+.founder-section .eyebrow{ color: var(--gold-warm); }
+.founder-quote{
+  position: relative;
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+  line-height: 1.45;
+  color: #F2EAD3;
+}
+.founder-quote::before{
+  content: "\201C";
+  display: block;
+  font-family: var(--display);
+  font-size: 5rem; color: var(--gold-warm);
+  line-height: 0.8; margin-bottom: 0.8rem;
+}
+.founder-quote cite{
+  display: block;
+  margin-top: 1.3rem;
+  font-family: var(--mono);
+  font-style: normal;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-warm);
+}
+.founder-body p{ color: rgba(255,250,235,0.85); font-size: 1rem; line-height: 1.65; }
+.founder-body .sig-card{
+  margin-top: 1.8rem;
+  padding: 1.4rem;
+  border-radius: 12px;
+  border: 1px solid rgba(215,176,92,0.3);
+  background: rgba(15,17,21,0.4);
+}
+.founder-body .sig-card .label{
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-warm);
+}
+.founder-body .sig-card .name{
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.35rem;
+  color: var(--paper);
+  margin-top: 0.5rem;
+}
+.founder-body .sig-card .role{
+  font-family: var(--body);
+  font-size: 0.84rem;
+  color: rgba(255,250,235,0.7);
+  margin-top: 0.2rem;
+}
+
+/* ---------- Closing CTA ---------- */
+.closing-cta{
+  padding: 5rem 0;
+  text-align: center;
+  background:
+    radial-gradient(ellipse 60% 80% at 50% 100%, rgba(189, 143, 42, 0.20), transparent 70%),
+    var(--bg-warm);
+}
+.closing-cta .clock{
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(2.6rem, 6vw, 4.2rem);
+  color: var(--vermilion);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.closing-cta h2{
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  color: var(--navy);
+  max-width: 24ch;
+  margin: 0 auto 1.3rem;
+}
+.closing-cta p{
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--ink-mute);
+  max-width: 30rem;
+  margin: 0 auto 2.5rem;
+}
+.closing-cta .cta-row{ display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+
+/* ---------- Footer ---------- */
+footer{ background: var(--ink); color: var(--paper); padding: 4rem 0 3rem; }
+.footer-inner{ display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.2rem; }
+.footer-built{
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin: 0;
+  color: var(--paper);
+}
+.footer-socials{ display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; }
+.footer-socials a{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,250,235,0.7);
+  padding: 0.4rem 0.2rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+.footer-socials a:hover{ color: var(--gold-warm); border-color: var(--gold-warm); }
+.footer-socials svg{ width: 14px; height: 14px; }
+.footer-tag{
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(255,250,235,0.4);
+  margin: 0.5rem 0 0;
+}
+
+/* ---------- Article meta strip (under hero) ---------- */
+.article-meta{
+  background: var(--paper);
+  border-top: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+  padding: 1.3rem 0;
+}
+.article-meta-inner{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem 2.5rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.article-meta .author{
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-family: var(--body);
+  font-size: 0.92rem;
+  color: var(--ink);
+  font-weight: 500;
+}
+.article-meta .avatar{
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+  color: var(--gold-warm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0;
+}
+.article-meta .author .meta-sub{
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  font-weight: 400;
+  margin-top: 0.1rem;
+}
+.article-meta .meta-divider{
+  width: 1px;
+  height: 26px;
+  background: var(--line);
+}
+.article-meta .meta-item .lbl{
+  display: block;
+  color: var(--ink-faint);
+  margin-bottom: 0.2rem;
+  font-size: 0.6rem;
+}
+.article-meta .meta-item .val{
+  color: var(--ink);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+}
+.article-meta .share{
+  margin-left: auto;
+  display: flex;
+  gap: 0.5rem;
+}
+.article-meta .share a{
+  width: 36px; height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-soft);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.article-meta .share a:hover{ background: var(--navy); color: var(--paper); border-color: var(--navy); }
+.article-meta .share svg{ width: 15px; height: 15px; }
+
+/* ---------- Reading progress bar ---------- */
+.read-progress{
+  position: fixed;
+  top: 0; left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--vermilion), var(--gold));
+  z-index: 100;
+  transition: width 0.1s linear;
+}
+
+/* ---------- "What you'll learn today" takeaways box ---------- */
+.takeaways{
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 2rem clamp(1.4rem, 3vw, 2.5rem);
+  box-shadow: var(--shadow-card);
+  position: relative;
+  max-width: 64rem;
+  margin: 0 auto;
+}
+.takeaways .takeaways-head{
+  display: flex;
+  align-items: baseline;
+  gap: 1.2rem;
+  border-bottom: 1px solid var(--line-soft);
+  padding-bottom: 1rem;
+  margin-bottom: 1.4rem;
+}
+.takeaways .label{
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--vermilion);
+  font-weight: 500;
+}
+.takeaways .summary{
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  flex: 1;
+}
+.takeaways ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem 2rem;
+}
+@media (min-width: 760px){ .takeaways ul{ grid-template-columns: 1fr 1fr; } }
+.takeaways li{
+  display: grid;
+  grid-template-columns: 2.4rem 1fr;
+  gap: 0.6rem;
+  align-items: baseline;
+  font-size: 0.96rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+.takeaways li::before{
+  content: attr(data-n);
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--gold);
+  font-weight: 600;
+}
+.takeaways li strong{
+  display: block;
+  font-family: var(--body);
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.1rem;
+}
+
+/* ---------- Chapter marker / numbered block label ---------- */
+.chapter-marker{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 1.2rem;
+}
+.chapter-marker strong{
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--vermilion);
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+.chapter-marker .pipe{
+  display: inline-block;
+  width: 1.5rem;
+  height: 1px;
+  background: var(--line);
+}
+
+/* ---------- Continue the series ---------- */
+.continue-series{
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 2.4rem clamp(1.5rem, 3vw, 2.5rem);
+  box-shadow: var(--shadow-card);
+  margin-bottom: 4rem;
+}
+.continue-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--line-soft);
+  padding-bottom: 1rem;
+}
+.continue-head .label{
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+.continue-head .alt{
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.continue-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.4rem;
+}
+@media (min-width: 760px){ .continue-grid{ grid-template-columns: 1fr 1fr 1fr; gap: 1.4rem; } }
+.next-session{
+  display: block;
+  padding: 1.4rem 1.4rem;
+  border: 1px solid var(--line-soft);
+  border-radius: 12px;
+  background: var(--bg-card);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.next-session:hover{
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--gold);
+}
+.next-session .day{
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--vermilion);
+  margin-bottom: 0.4rem;
+}
+.next-session h4{
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: var(--navy);
+  margin: 0 0 0.4rem;
+}
+.next-session p{
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  margin: 0 0 1rem;
+  line-height: 1.5;
+}
+.next-session .when{
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.next-session .arrow{
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-family: var(--body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+/* ---------- Marquee strip ---------- */
+.marquee-strip{
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.9rem 0;
+  overflow: hidden;
+  position: relative;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.marquee-track{
+  display: flex;
+  gap: 3rem;
+  white-space: nowrap;
+  animation: marquee 35s linear infinite;
+  width: max-content;
+}
+.marquee-track .item{
+  font-family: var(--display-alt);
+  font-style: italic;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--gold-warm);
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+.marquee-track .item .dot{
+  width: 4px; height: 4px;
+  background: var(--rust);
+  border-radius: 50%;
+  display: inline-block;
+}
+@keyframes marquee{
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ---------- Animated link underline ---------- */
+.nav-links a{
+  position: relative;
+  padding-bottom: 2px;
+}
+.nav-links a::after{
+  content:"";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 100%;
+  height: 1.5px;
+  background: var(--navy);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.nav-links a:hover::after{ transform: scaleX(1); transform-origin: left; }
+
+/* ---------- Stat number animation ---------- */
+.stat .num{
+  display: inline-block;
+  position: relative;
+}
+.stat[data-counted="false"] .num span.counter{ opacity: 0.55; }
+
+/* ---------- Card hover (codex precepts) ---------- */
+.precept{ transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease; }
+.precept:hover{
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lift);
+  border-color: var(--gold);
+}
+.precept .n{ transition: color 0.3s ease, transform 0.3s ease; }
+.precept:hover .n{ color: var(--rust); transform: translateX(2px); }
+
+/* ---------- map cell hover ---------- */
+.map-cell{ transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease; }
+.map-cell:hover{
+  transform: translateY(-3px);
+  border-color: var(--gold);
+  box-shadow: var(--shadow-card);
+  z-index: 2;
+}
+
+/* ---------- Button shimmer ---------- */
+.btn-primary{ position: relative; overflow: hidden; }
+.btn-primary::after{
+  content:"";
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transition: left 0.7s ease;
+}
+.btn-primary:hover::after{ left: 100%; }
+.btn-gold{ position: relative; overflow: hidden; }
+.btn-gold::after{
+  content:"";
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+  transition: left 0.7s ease;
+}
+.btn-gold:hover::after{ left: 100%; }
+
+/* ---------- Reveal ---------- */
+.reveal{ opacity: 0; transform: translateY(20px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+.reveal.in{ opacity: 1; transform: none; }
+.reveal.d1{ transition-delay: 0.08s; }
+.reveal.d2{ transition-delay: 0.16s; }
+.reveal.d3{ transition-delay: 0.24s; }
+.reveal.d4{ transition-delay: 0.32s; }
+.reveal.d5{ transition-delay: 0.40s; }
+
+/* Stagger child reveals */
+.reveal.stagger > *{ opacity: 0; transform: translateY(14px); transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+.reveal.stagger.in > *:nth-child(1){ opacity: 1; transform: none; transition-delay: 0.05s; }
+.reveal.stagger.in > *:nth-child(2){ opacity: 1; transform: none; transition-delay: 0.13s; }
+.reveal.stagger.in > *:nth-child(3){ opacity: 1; transform: none; transition-delay: 0.21s; }
+.reveal.stagger.in > *:nth-child(4){ opacity: 1; transform: none; transition-delay: 0.29s; }
+.reveal.stagger.in > *:nth-child(5){ opacity: 1; transform: none; transition-delay: 0.37s; }
+.reveal.stagger.in > *:nth-child(n+6){ opacity: 1; transform: none; transition-delay: 0.45s; }
+
+@media (prefers-reduced-motion: reduce){
+  .reveal{ opacity: 1; transform: none; transition: none; }
+  .reveal.stagger > *{ opacity: 1; transform: none; transition: none; }
+  .day-badge .live-dot{ animation: none; }
+  .hero::before{ animation: none; }
+  .marquee-track{ animation: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== READING PROGRESS ===================== -->
+<div class="read-progress" id="readProgress"></div>
+
+<!-- ===================== NAV ===================== -->
+<nav class="topnav">
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <span class="logo">3B3P</span>
+      <span class="sub">The Master Keys · 2026</span>
+    </div>
+    <div class="nav-links">
+      <a href="#program">Program</a>
+      <a href="#schedule">This Week</a>
+      <a href="#map">35-Day Map</a>
+      <a href="#community">Community</a>
+      <a href="#founder">Instructor</a>
+    </div>
+    <span class="day-badge"><span class="live-dot"></span><strong>Day 01</strong> · Live Today</span>
+  </div>
+</nav>
+
+<main>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner reveal">
+      <span class="eyebrow">An Invitation Closed to Algorithms</span>
+      <h1>The <span class="em">Master Keys</span> to a life that <span class="accent">opens</span>.</h1>
+      <p class="sub">A 35-day closed program in three books and three practices. For people who already know that the missing thing is not more information — it is the right ritual, repeated at the right hour, under the right discipline.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#program">See today's session <span class="arrow">→</span></a>
+        <a class="btn btn-ghost" href="#map">Open the 35-day map</a>
+      </div>
+      <div class="meta-row">
+        <span>35 Days</span><span class="sep"></span>
+        <span>3 Books</span><span class="sep"></span>
+        <span>3 Practices</span><span class="sep"></span>
+        <span>5 AM IST</span><span class="sep"></span>
+        <span>Invitation Only</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ARTICLE META ===================== -->
+<section class="article-meta">
+  <div class="container">
+    <div class="article-meta-inner">
+      <div class="author">
+        <span class="avatar">S</span>
+        <span>
+          Written from a session by <strong style="font-weight:600;">Sasi bro</strong>
+          <span class="meta-sub">3B3P · Founder &amp; Lead Instructor</span>
+        </span>
+      </div>
+      <span class="meta-divider"></span>
+      <div class="meta-item"><span class="lbl">Published</span><span class="val">29 May 2026</span></div>
+      <div class="meta-item"><span class="lbl">Session</span><span class="val">Day 01 / 35</span></div>
+      <div class="meta-item"><span class="lbl">Read time</span><span class="val">~14 min</span></div>
+      <div class="meta-item"><span class="lbl">Series</span><span class="val">The Master Keys</span></div>
+      <div class="share">
+        <a href="#" aria-label="Copy link" title="Copy link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        </a>
+        <a href="https://wa.me/?text=3B3P%20Day%201" target="_blank" rel="noopener" aria-label="Share on WhatsApp" title="Share on WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.93 11.93 0 0 0 12.04 0C5.46 0 .1 5.36.1 11.94c0 2.1.55 4.16 1.6 5.97L0 24l6.27-1.64a11.93 11.93 0 0 0 5.77 1.47h.01c6.58 0 11.94-5.36 11.94-11.94 0-3.19-1.24-6.19-3.47-8.41zM12.04 21.8h-.01a9.84 9.84 0 0 1-5.02-1.38l-.36-.21-3.72.98 1-3.63-.24-.37a9.85 9.85 0 1 1 8.35 4.61z"/></svg>
+        </a>
+        <a href="#" aria-label="Bookmark" title="Bookmark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHAT YOU'LL LEARN ===================== -->
+<section class="block" style="padding-top: 3.5rem; padding-bottom: 1rem;">
+  <div class="container">
+    <div class="takeaways reveal">
+      <div class="takeaways-head">
+        <span class="label">In this session</span>
+        <span class="summary">The five things Day 01 hands you, before tomorrow begins.</span>
+      </div>
+      <ul>
+        <li data-n="01"><span><strong>The master-key metaphor.</strong>Every life-problem is a different lock. There is one key per category, not per problem.</span></li>
+        <li data-n="02"><span><strong>The 35-day shape of the journey.</strong>Three books, three practices, broken into a week-by-week arc you can hold in your head.</span></li>
+        <li data-n="03"><span><strong>Why 4:33 AM is a chemical, not a discipline.</strong>The melatonin window, and what your body does between 10 PM and 2 AM.</span></li>
+        <li data-n="04"><span><strong>The half-formula behind the Law of Attraction.</strong>Three forces and eight blockers. Why most attempts fail before they leave the room.</span></li>
+        <li data-n="05"><span><strong>The nine community precepts.</strong>The structural rules that protect the discipline of the room — and what gets you removed from it.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STATS ===================== -->
+<section class="stats-strip">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat" data-counted="false"><div class="num"><span class="counter" data-target="35">0</span><span class="unit">days</span></div><div class="label">Continuous practice</div></div>
+      <div class="stat" data-counted="false"><div class="num"><span class="counter" data-target="3">0</span><span class="unit">books</span></div><div class="label">Decoded for you</div></div>
+      <div class="stat" data-counted="false"><div class="num"><span class="counter" data-target="3">0</span><span class="unit">practices</span></div><div class="label">One per book</div></div>
+      <div class="stat"><div class="num">05<span class="unit">am</span></div><div class="label">Daily session</div></div>
+      <div class="stat"><div class="num">₹0</div><div class="label">No cost · ever</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MARQUEE STRIP ===================== -->
+<section class="marquee-strip" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="item">Brahmamuhurta <span class="dot"></span></span>
+    <span class="item">The Scientific Gratitude <span class="dot"></span></span>
+    <span class="item">Ho&rsquo;oponopono <span class="dot"></span></span>
+    <span class="item">Shadchakrabhedan <span class="dot"></span></span>
+    <span class="item">The 8 Hidden Blockers <span class="dot"></span></span>
+    <span class="item">Money Magnet <span class="dot"></span></span>
+    <span class="item">5 AM IST <span class="dot"></span></span>
+    <span class="item">Invitation Only <span class="dot"></span></span>
+    <!-- duplicate for infinite marquee -->
+    <span class="item">Brahmamuhurta <span class="dot"></span></span>
+    <span class="item">The Scientific Gratitude <span class="dot"></span></span>
+    <span class="item">Ho&rsquo;oponopono <span class="dot"></span></span>
+    <span class="item">Shadchakrabhedan <span class="dot"></span></span>
+    <span class="item">The 8 Hidden Blockers <span class="dot"></span></span>
+    <span class="item">Money Magnet <span class="dot"></span></span>
+    <span class="item">5 AM IST <span class="dot"></span></span>
+    <span class="item">Invitation Only <span class="dot"></span></span>
+  </div>
+</section>
+
+<!-- ===================== PROGRAM OVERVIEW (Image 10: three-books-triptych) ===================== -->
+<section class="block" id="program">
+  <div class="container">
+    <div class="block-head reveal">
+      <div>
+        <span class="chapter-marker"><strong>I.</strong><span class="pipe"></span>Chapter 01 of 11</span>
+        <span class="eyebrow">The Program</span>
+        <h2>Three books. Three practices. <em class="serif">One transformation.</em></h2>
+      </div>
+      <p class="lede">The program structure, exactly as it is shown inside the room: three books, three numbered practices, one closed community of practitioners who already know that the missing thing isn't more information.</p>
+    </div>
+
+    <article class="feature image-right reveal">
+      <div class="feature-text">
+        <span class="role">Program Architecture</span>
+        <h3>Each book gives <em>one</em> master key.</h3>
+        <p>You will read no books. You will practice three. Each practice is decoded for you in a 5 AM live session, then carried through the rest of the day. Book one teaches the morning. Book two teaches gratitude. Book three teaches clearing.</p>
+        <dl class="info-row">
+          <div><dt>Book I</dt><dd>Miracle Morning Millionaires<span class="small">Hal Elrod &amp; David Osborn · Practice: Brahmamuhurta</span></dd></div>
+          <div><dt>Book II</dt><dd>The Magic<span class="small">Rhonda Byrne · Practice: Scientific Gratitude</span></dd></div>
+          <div><dt>Book III</dt><dd>Zero Limits<span class="small">Joe Vitale · Practice: Ho&rsquo;oponopono</span></dd></div>
+          <div><dt>Format</dt><dd>5 AM live + daily audio<span class="small">35 days · invitation only · no cost</span></dd></div>
+        </dl>
+      </div>
+      <div class="feature-figure">
+        <div class="figure-card">
+          <img src="assets/three-books-triptych.png" alt="3 Books — 3 Practices: Miracle Morning, The Magic, Zero Limits">
+        </div>
+        <div class="figure-meta"><span class="num">Fig. 01</span><span>The program, in one slide</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===================== TODAY'S DAY 1 CARD ===================== -->
+<section class="block" style="padding-top: 0;">
+  <div class="container">
+    <div class="today-card reveal">
+      <div>
+        <span class="eyebrow">Day 01 · 29 May 2026 · The Master Keys</span>
+        <h2>One key, <span class="upright">a hundred</span> doors.</h2>
+        <p class="quote">
+          &ldquo;What you seek is seeking you.&rdquo;
+          <span class="attr">— Jalaluddin Rumi, 13th c.</span>
+        </p>
+        <p class="body">A friend chose you, named you, and sent you the link. The room is closed by design; the link travels by hand. Today's session introduces the central metaphor of the next thirty-five days: every problem in your life is a different lock, and a master key exists for every one of them.</p>
+      </div>
+      <dl class="today-meta">
+        <div><dt>Today · Live Now</dt><dd>The Master Keys<span class="small">Introduction · ~60 min</span></dd></div>
+        <div><dt>Tomorrow · 5 AM</dt><dd>Shadchakrabhedan<span class="small">Vagus activation · 10 min</span></dd></div>
+        <div><dt>Discipline</dt><dd>Wake before 4:33<span class="small">No screens after 7 PM</span></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== BOOK I — Image 1: book-miracle-morning ===================== -->
+<section class="block">
+  <div class="container">
+    <span class="chapter-marker"><strong>II.</strong><span class="pipe"></span>Chapter 02 of 11 · Book One</span>
+    <article class="feature image-left reveal">
+      <div class="feature-figure">
+        <div class="figure-card">
+          <img src="assets/book-miracle-morning.png" alt="Book One — Miracle Morning Millionaires by Hal Elrod and David Osborn. Sunday 5AM RAS-1. 2 hacks for brain. 1) Secret is not in waking up but in RITUALS, 2) How to raise energy (vibration) within 3 hrs of wake up, 3) Simple 5 step wake up process irrespective of bed time, 4) Connection bw Early Morning &amp; Wealth, 5) Focus on ur Energy">
+        </div>
+        <div class="figure-meta"><span class="num">Fig. 02</span><span>Book I · Sunday 5 AM RAS-1</span></div>
+      </div>
+      <div class="feature-text">
+        <span class="role">Book One · <em style="font-style: italic; color: var(--navy);">Miracle Morning Millionaires</em></span>
+        <span class="pill">Practice One · Brahmamuhurta</span>
+        <h2>The secret is not in waking. <em class="serif">It is in the ritual that follows.</em></h2>
+        <p>The author of <em>Miracle Morning Millionaires</em>, David Osborn, did not study the rich to learn that they wake early. He studied them to learn what they do in the three hours after. The wake-up itself is the doorway. The compounding happens inside.</p>
+        <p>The five points on this slide are what you will receive in detail during the Sunday session: why the ritual matters more than the alarm, how to raise vibration within three hours of waking, a five-step process that holds regardless of bedtime, the connection between morning energy and wealth, and why focus on energy beats focus on time.</p>
+        <dl class="info-row">
+          <div><dt>Author</dt><dd>Elrod &amp; Osborn</dd></div>
+          <div><dt>Practice</dt><dd>Brahmamuhurta</dd></div>
+          <div><dt>Decoded on</dt><dd>Sun · 31 May · 5 AM</dd></div>
+          <div><dt>Duration</dt><dd>~75 min · RAS-1</dd></div>
+        </dl>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+<!-- ===================== THE SCIENCE — Image 2: melatonin-chart ===================== -->
+<section class="block" style="background: var(--bg-warm);">
+  <div class="container">
+    <span class="chapter-marker"><strong>III.</strong><span class="pipe"></span>Chapter 03 of 11 · The Science</span>
+    <article class="feature image-right reveal">
+      <div class="feature-text">
+        <span class="role">The Science</span>
+        <span class="pill">Endocrinology · Chronobiology</span>
+        <h2>Ten at night to two in the morning. <em class="serif">This is money time.</em></h2>
+        <p>The pineal gland starts producing melatonin when light diminishes. The molecule peaks during the mid-sleep cycle, between roughly 10 PM and 2 AM — the four hours when the body does its most expensive work. If you are awake in this window, none of this work happens.</p>
+        <p>In this window, melatonin lowers cortisol, tunes carbohydrate metabolism, protects the endothelium, sharpens the immune response, scavenges free radicals, repairs DNA, and protects the neurons. The chemistry of ageing slows. The lifespan extends. Sleep at one in the morning and most of it never arrives.</p>
+        <dl class="info-row">
+          <div><dt>Source</dt><dd>Pineal gland<span class="small">Mid-sleep activation</span></dd></div>
+          <div><dt>Peak window</dt><dd>22:00 – 02:00<span class="small">Four hours of repair</span></dd></div>
+          <div><dt>Roles</dt><dd>9 measurable functions<span class="small">DNA, immunity, longevity</span></dd></div>
+          <div><dt>Reference</dt><dd>Sleep Smarter<span class="small">Shawn Stevenson</span></dd></div>
+        </dl>
+      </div>
+      <div class="feature-figure">
+        <div class="figure-card">
+          <img src="assets/melatonin-chart.png" alt="Plasma melatonin levels through the day. Pineal gland begins producing melatonin as light diminishes. Melatonin levels peak during mid-sleep cycle. Levels decline with daylight.">
+        </div>
+        <div class="figure-meta"><span class="num">Fig. 03</span><span>Plasma melatonin · 24-hour cycle</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+<!-- ===================== SUNDAY — Image 3: secrets-of-brain ===================== -->
+<section class="block">
+  <div class="container">
+    <span class="chapter-marker"><strong>IV.</strong><span class="pipe"></span>Chapter 04 of 11 · Sunday Session</span>
+    <article class="feature image-left reveal">
+      <div class="feature-figure">
+        <div class="figure-card">
+          <img src="assets/secrets-of-brain.png" alt="Secrets of Brain — How to use as Idea generator / problem solver. ₹1,50,000 worth session. 3 Hacks to Keep Brain Healthy, Active and to Program RAS for Wealth &amp; Success. The Reticular Activating System diagram. Sunday Retelecast 5am.">
+        </div>
+        <div class="figure-meta"><span class="num">Fig. 04</span><span>Sunday session · 5 AM</span></div>
+      </div>
+      <div class="feature-text">
+        <span class="role">Sunday · 31 May · 5 AM</span>
+        <span class="pill">RAS · ₹1.5L-grade session</span>
+        <h2>How to program the brain&rsquo;s <em class="serif">filter.</em></h2>
+        <p>The Reticular Activating System decides what you notice. Re-program it before the world fills it, and the day brings you what you tuned toward. Sunday's session decodes three brain hacks the wealthy use without naming them — and how to use the brain as an idea generator and problem solver.</p>
+        <p>This is the session your instructor describes as worth ₹1.5 lakh. It is delivered free, inside this room, in 75 minutes.</p>
+        <dl class="info-row">
+          <div><dt>Topic</dt><dd>Brain hacks · RAS</dd></div>
+          <div><dt>When</dt><dd>Sun · 31 May · 5 AM</dd></div>
+          <div><dt>Length</dt><dd>~75 min · live</dd></div>
+          <div><dt>Recording</dt><dd>None · be on time</dd></div>
+        </dl>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+<!-- ===================== MONDAY — Image 5: sleep-books ===================== -->
+<section class="block">
+  <div class="container">
+    <span class="chapter-marker"><strong>V.</strong><span class="pipe"></span>Chapter 05 of 11 · Monday Session</span>
+    <article class="feature image-right reveal">
+      <div class="feature-text">
+        <span class="role">Monday · 01 June · 5 AM</span>
+        <span class="pill">Arts &amp; Science of Sleep</span>
+        <h2>Five golden rules for a <em class="serif">good night.</em></h2>
+        <p>The Monday session draws from ten of the most cited sleep books on the table — Walker's <em>Why We Sleep</em>, Shawn Stevenson's <em>Sleep Smarter</em>, Nicola Morgan's <em>Awesome Power of Sleep</em>, Paul McKenna's <em>I Can Make You Sleep</em>, Chris Winter's <em>The Sleep Solution</em>, plus titles on cellular ageing, brain plasticity, and inflammation.</p>
+        <p>The session compresses the five golden rules for goodnight sleep, and the science behind how sleep cures and prevents disease — and keeps you young. Sixty minutes. One sitting.</p>
+        <dl class="info-row">
+          <div><dt>Topic</dt><dd>Sleep · cures · longevity</dd></div>
+          <div><dt>When</dt><dd>Mon · 01 Jun · 5 AM</dd></div>
+          <div><dt>Length</dt><dd>60 min · core session</dd></div>
+          <div><dt>Drawn from</dt><dd>10+ research books</dd></div>
+        </dl>
+      </div>
+      <div class="feature-figure">
+        <div class="figure-card">
+          <img src="assets/sleep-books.png" alt="Arts &amp; Science of Sleep. 5 Golden Rules for Goodnight sleep. Mon 5am (60 mins). Science behind sleep how it cures &amp; prevents diseases and keeps you young. Books shown: Why We Sleep, Sleep Smarter, The Awesome Power of Sleep, I Can Make You Sleep, The Sleep Solution, The Telomere Effect, The Science and Technology of Growing Young, Optimal Health Revolution, A Guide to Health, The Brain's Way of Healing.">
+        </div>
+        <div class="figure-meta"><span class="num">Fig. 05</span><span>Monday's session deck</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+<!-- ===================== BOOK II — Image 6: magic-practice-week ===================== -->
+<section class="block">
+  <div class="container">
+    <span class="chapter-marker"><strong>VI.</strong><span class="pipe"></span>Chapter 06 of 11 · Book Two</span>
+    <article class="feature image-left reveal">
+      <div class="feature-figure">
+        <div class="figure-card">
+          <img src="assets/magic-practice-week.png" alt="28 Days Practices leads to Magical Life. The Magic by Rhonda Byrne. Each chapter Decoded in 10-15 min Audio. Listen first in the morning &amp; Start day with practice. ⚠ Your AP may deny 5am link if you not replied for Audio.">
+        </div>
+        <div class="figure-meta"><span class="num">Fig. 06</span><span>Book II · daily audio rule</span></div>
+      </div>
+      <div class="feature-text">
+        <span class="role">Book Two · <em style="font-style: italic; color: var(--navy);">The Magic</em></span>
+        <span class="pill">Practice Two · Scientific Gratitude</span>
+        <h2>Twenty-eight days. <em class="serif">Twenty-eight chapters.</em> One practice.</h2>
+        <p>Each chapter of Rhonda Byrne&rsquo;s <em>The Magic</em> is decoded into a 10–15 minute audio. You listen first thing in the morning. You begin the day with the practice. That is all.</p>
+        <p>The discipline of this book is the audio reply. Your Accountability Partner — your AP — may deny you the next 5 AM link if you have not responded to the audio. The room treats the audio reply as proof that the practice is being done. Without it, the chain breaks.</p>
+        <dl class="info-row">
+          <div><dt>Author</dt><dd>Rhonda Byrne</dd></div>
+          <div><dt>Practice</dt><dd>Feeling, not saying</dd></div>
+          <div><dt>Audio</dt><dd>10–15 min · daily</dd></div>
+          <div><dt>Trial begins</dt><dd>Sunday 31 May</dd></div>
+        </dl>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+<!-- ===================== THE 28-DAY ARC — Image 4: magic-28day-schedule ===================== -->
+<section class="block" style="background: var(--bg-warm);">
+  <div class="container">
+    <span class="chapter-marker"><strong>VII.</strong><span class="pipe"></span>Chapter 07 of 11 · The 28-Day Arc</span>
+    <article class="feature image-right reveal">
+      <div class="feature-text">
+        <span class="role">The 28-Day Arc</span>
+        <span class="pill">Master plan of the practice</span>
+        <h2>The progression, mapped <em class="serif">week by week.</em></h2>
+        <p>The first three days — Sunday through Tuesday — are trial. You experience the difference between <em>saying</em> gratitude and <em>feeling</em> gratitude. The teacher of this room calls the difference the size of an ocean.</p>
+        <p>Wednesday opens the science of gratitude and the Day 2 trial. Thursday begins the Day 1 real practice. Friday is Day 2. Saturday is Day 3. From there, one chapter, one day, until Day 28.</p>
+        <dl class="info-row">
+          <div><dt>Sun – Tue</dt><dd>Day 1 trial</dd></div>
+          <div><dt>Wednesday</dt><dd>Science · Day 2 trial</dd></div>
+          <div><dt>Thursday</dt><dd>Day 1 real practice begins</dd></div>
+          <div><dt>Friday onward</dt><dd>Day 2 &amp; so on…</dd></div>
+        </dl>
+      </div>
+      <div class="feature-figure">
+        <div class="figure-card">
+          <img src="assets/magic-28day-schedule.png" alt="28 Days Magic Practice. Master plan to become master of Gratitude. Sun to Tue — Day 1 Practice to Experience difference between saying gratitude &amp; Feeling Gratitude. Wed — Science of Gratitude &amp; Day 2 Trial practice. Thu — Day 1 Real Practice. Fri — Day 2 &amp; so on…">
+        </div>
+        <div class="figure-meta"><span class="num">Fig. 07</span><span>The 28-day master plan</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+<!-- ===================== WEDNESDAY — Image 7: four-thinkers ===================== -->
+<section class="block">
+  <div class="container">
+    <span class="chapter-marker"><strong>VIII.</strong><span class="pipe"></span>Chapter 08 of 11 · Wednesday Session</span>
+    <article class="feature image-left reveal">
+      <div class="feature-figure">
+        <div class="figure-card">
+          <img src="assets/four-thinkers.png" alt="How gratitude brings Magic Life? Research Studies &amp; Scientific Explanation. Four portraits: Thiruvalluvar, Nikola Tesla, Albert Einstein, Dr. David Hawkins. Magic life = Abundance in health, wealth, relationships etc. Wednesday 5am.">
+        </div>
+        <div class="figure-meta"><span class="num">Fig. 08</span><span>Wednesday session · 4 witnesses</span></div>
+      </div>
+      <div class="feature-text">
+        <span class="role">Wednesday · 03 June · 5 AM</span>
+        <span class="pill">How Gratitude Brings Magic Life</span>
+        <h2>Four witnesses, <em class="serif">four eras,</em> one finding.</h2>
+        <p>Thiruvalluvar, 2nd century BCE, wrote the calculus of giving and gratitude into 1,330 couplets. Nikola Tesla, in the early 1900s, framed it as frequency. Albert Einstein, in private letters, named the gratitude he held for the hundreds of lives he had borrowed from. Dr. David Hawkins, late 20th century, placed it on a logarithmic scale of consciousness.</p>
+        <p>The Wednesday session walks the research studies and the scientific explanation behind one statement: <em>magic life equals abundance in health, wealth, relationships.</em></p>
+        <dl class="info-row">
+          <div><dt>Topic</dt><dd>Gratitude · the science</dd></div>
+          <div><dt>When</dt><dd>Wed · 03 Jun · 5 AM</dd></div>
+          <div><dt>Witnesses</dt><dd>Thiruvalluvar · Tesla · Einstein · Hawkins</dd></div>
+          <div><dt>Length</dt><dd>~60 min</dd></div>
+        </dl>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+<!-- ===================== THURSDAY — Image 8: money-magnet ===================== -->
+<section class="block">
+  <div class="container">
+    <span class="chapter-marker"><strong>IX.</strong><span class="pipe"></span>Chapter 09 of 11 · Thursday Session</span>
+    <article class="feature image-right reveal">
+      <div class="feature-text">
+        <span class="role">Thursday · 04 June · 5 AM Live</span>
+        <span class="pill">Money Magnet</span>
+        <h2>Master plan — <em class="serif">magic in a week.</em></h2>
+        <p>Once the gratitude practice has bedded in, the room shifts toward money. Thursday is the live session your instructor labels <em>Money Magnet</em>: the science and the rules behind one claim — that anyone, given the right architecture, can become rich.</p>
+        <p>The session is not a motivational lecture. It is a rule set. Bring a notebook. The session does not repeat.</p>
+        <dl class="info-row">
+          <div><dt>Topic</dt><dd>Money master plan<span class="small">The rules of wealth</span></dd></div>
+          <div><dt>When</dt><dd>Thu · 04 Jun · 5 AM<span class="small">Live · ~60 min</span></dd></div>
+          <div><dt>Format</dt><dd>Rules-based<span class="small">Not motivational talk</span></dd></div>
+          <div><dt>Recording</dt><dd>None<span class="small">Be on time or miss it</span></dd></div>
+        </dl>
+      </div>
+      <div class="feature-figure">
+        <div class="figure-card">
+          <img src="assets/money-magnet.png" alt="Money Magnet! Master plan – Magic in a week. Thursday 5am live. Science &amp; Rules – Anyone can become Rich.">
+        </div>
+        <div class="figure-meta"><span class="num">Fig. 09</span><span>Thursday&rsquo;s headline slide</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+<!-- ===================== BOOK III — Image 9: eight-blockers ===================== -->
+<section class="block">
+  <div class="container">
+    <div class="block-head reveal">
+      <div>
+        <span class="chapter-marker"><strong>X.</strong><span class="pipe"></span>Chapter 10 of 11 · Book Three</span>
+        <span class="eyebrow">Book Three · <em style="font-style: italic; color: var(--navy);">Zero Limits</em></span>
+        <h2>The eight hidden blockers — and the <em class="serif">four-line clearing.</em></h2>
+      </div>
+      <p class="lede">You have heard of the Law of Attraction. You have probably tried it. For most it does not work. This is because the formula in circulation is half a formula. Book three completes it.</p>
+    </div>
+
+    <article class="feature image-left reveal">
+      <div class="feature-figure">
+        <div class="figure-card">
+          <img src="assets/eight-blockers.png" alt="The 8 Hidden Blockers. 01 Past Experiences. 02 ANTs (Automatic Negative Thoughts). 03 Attachment to Identity. 04 Environment &amp; Conditioning. 05 Fear of Change / Unknown. 06 Receiving Blocks / Guilt / Unworthiness. 07 Somatic / Body-Level Resistance. 08 Conflicting Beliefs.">
+        </div>
+        <div class="figure-meta"><span class="num">Fig. 10</span><span>The eight blockers · Zero Limits</span></div>
+      </div>
+      <div class="feature-text">
+        <span class="role">Zero Limits · Joe Vitale</span>
+        <span class="pill">Ho&rsquo;oponopono · final 21 days</span>
+        <h3>Three forces. Eight blockers. <em class="serif">One signal.</em></h3>
+        <p>Manifestation requires three forces — intention (a clear thought), emotion (a feeling), alignment (coherence between them). Most people stop here. Most people fail here. Because eight quiet, automatic blockers — stored in the body, stored in the room you grew up in — cancel the signal before it leaves.</p>
+        <p>The final twenty-one days of the program teach Ho&rsquo;oponopono — a four-line Hawaiian clearing — to dissolve each blocker, one at a time.</p>
+
+        <div class="formula-card">
+          <div class="formula-row">
+            <span class="term">Intention</span><span class="op">×</span>
+            <span class="term">Emotion</span><span class="op">×</span>
+            <span class="term">Alignment</span>
+          </div>
+          <div class="formula-row" style="margin-top: 0.5rem;">
+            <span class="op">÷</span>
+            <span class="term">Blocks</span><span class="op">=</span>
+            <span class="result">Result</span>
+          </div>
+          <div class="formula-caption">The half-formula nobody mentions</div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+<!-- ===================== TOMORROW — Image 13: shadchakrabhedan ===================== -->
+<section class="block" style="background: var(--bg-warm);">
+  <div class="container">
+    <span class="chapter-marker"><strong>XI.</strong><span class="pipe"></span>Chapter 11 of 11 · Tomorrow&rsquo;s Session</span>
+    <article class="feature image-right reveal">
+      <div class="feature-text">
+        <span class="role">Tomorrow · 30 May · 5 AM Live</span>
+        <span class="pill">Shadchakrabhedan · New Version</span>
+        <h2>Unlock the power of your chakras in <em class="serif">just ten minutes.</em></h2>
+        <p>The first practical ritual you receive — tomorrow morning, live — is a ten-minute sequence called <em>Shadchakrabhedan</em>. Your instructor learned it from a cardiologist in Kerala, who taught it not as spirituality but as medicine: a clean way to activate the vagus nerve, shift the body from sympathetic into parasympathetic, and replace stress with energy.</p>
+        <p>Wake before 4:33. Set the alarm for 4:35 as a safety. By 5 AM you should be sitting upright in front of the screen. The session does not repeat.</p>
+        <dl class="info-row">
+          <div><dt>Topic</dt><dd>Chakra activation · VNS</dd></div>
+          <div><dt>When</dt><dd>Fri · 30 May · 5 AM</dd></div>
+          <div><dt>Length</dt><dd>50 min · 10 min practice</dd></div>
+          <div><dt>Wake by</dt><dd>04:33</dd></div>
+        </dl>
+      </div>
+      <div class="feature-figure">
+        <div class="figure-card">
+          <img src="assets/shadchakrabhedan.png" alt="Arts and Science of Shadchakrabhedan (New version). UNLOCK THE POWER OF YOUR CHAKRAS IN JUST 10 MINUTES. ARE YOU READY? Miracle Benefits of VNS stimulation.">
+        </div>
+        <div class="figure-meta"><span class="num">Fig. 11</span><span>Tomorrow&rsquo;s session</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+<!-- ===================== 35-DAY MAP ===================== -->
+<section class="block map-block" id="map">
+  <div class="container">
+    <div class="block-head reveal">
+      <div>
+        <span class="eyebrow">The Thirty-Five Day Map</span>
+        <h2>Day one of <em class="serif">thirty-five.</em></h2>
+      </div>
+      <p class="lede">A single grid. Every cell is a session. Today is sealed in navy. Tomorrow&rsquo;s cell is bordered in gold. Future days sit as dashed paper, waiting their turn. As each day lands, its cell fills in.</p>
+    </div>
+
+    <div class="map-grid" id="mapGrid"></div>
+
+    <div class="map-legend">
+      <span><i class="today"></i>Today · live</span>
+      <span><i class="next"></i>Tomorrow · 5 AM</span>
+      <span><i></i>To come</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== ARE YOU A LEARNER — Image 12: are-you-a-learner ===================== -->
+<section class="block" id="community">
+  <div class="container">
+    <article class="feature image-left reveal">
+      <div class="feature-figure">
+        <div class="figure-card">
+          <img src="assets/are-you-a-learner.png" alt="Are you a Learner? How can we help you better Learning? Feedback to ensure message received in right context. Group open 7.15am - 8.15am - 1hr. Watch gift videos. Attend weekly once meet your coach-live. Be active after 6am: Time to recall &amp; share feedback, Read others feedback &amp; react, Go thro VM videos / Telegram links, Complete Magic practice, Go for walk in sunlight, Reading | House keeping | Help ur spouse.">
+        </div>
+        <div class="figure-meta"><span class="num">Fig. 12</span><span>The learner&rsquo;s contract</span></div>
+      </div>
+      <div class="feature-text">
+        <span class="role">The Community Contract</span>
+        <span class="pill">Are you a learner?</span>
+        <h2>How the room helps you <em class="serif">learn faster.</em></h2>
+        <p>The group is open between 7:15 and 8:15 AM — one hour, daily. Feedback ensures the message landed in context. The gift videos arrive only after you reply to the audio. Weekly, once, you meet your coach live.</p>
+        <p>After 6 AM, no return to bed. The morning is the curriculum: recall and share feedback, read other members&rsquo; feedback, go through the videos and telegram links, complete the Magic practice, walk in sunlight, read, do housekeeping, help your spouse. This is not advice — it is the structure that produces the result.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+<!-- ===================== NINE PRECEPTS ===================== -->
+<section class="block" style="background: var(--bg-warm);">
+  <div class="container">
+    <div class="block-head reveal">
+      <div>
+        <span class="eyebrow">The Codex</span>
+        <h2>Nine precepts. <em class="serif">The discipline that protects the room.</em></h2>
+      </div>
+      <p class="lede">The community is free, but it is not casual. Each rule below was written to prevent a specific way the room could collapse. Read them once, and then again before you sleep.</p>
+    </div>
+
+    <div class="precepts-grid">
+      <div class="precept reveal"><span class="n">01</span><h4>Wake before 4:33.</h4><p>Set the alarm for 4:35 as a safety. If you wake earlier, the alarm finds nothing to ring on.</p></div>
+      <div class="precept reveal d1"><span class="n">02</span><h4>One group. One friend. One link.</h4><p>Multiple groups will get you removed from all of them. Keep one inviter. Save a second admin&rsquo;s number for emergencies.</p></div>
+      <div class="precept reveal d2"><span class="n">03</span><h4>No screens after seven.</h4><p>Dinner before seven. Light meal. After eight, no light enters your eyes that you would not want inside your sleep.</p></div>
+      <div class="precept reveal"><span class="n">04</span><h4>Pin two contacts.</h4><p>Your friend, and the 3B3P admin. Pin in WhatsApp. The next morning&rsquo;s link arrives at 7:30 the night before — only there.</p></div>
+      <div class="precept reveal d1"><span class="n">05</span><h4>No DMs to members.</h4><p>The community exists for transformation, not networking. Strangers who direct-message are removed. Speak to your friend, your admin, the group.</p></div>
+      <div class="precept reveal d2"><span class="n">06</span><h4>Write feedback before seven.</h4><p>After every session, send what you heard back in your own words. Reading what you wrote is what stores it.</p></div>
+      <div class="precept reveal"><span class="n">07</span><h4>Do not record.</h4><p>No screenshots, no screen recordings. Anyone who breaks this loses the link permanently. The discipline is what makes the room.</p></div>
+      <div class="precept reveal d1"><span class="n">08</span><h4>After six, do not sleep.</h4><p>Walk. Read. Write feedback. Practice. Help your family. Sit in sunlight. Do not give the hour back.</p></div>
+      <div class="precept reveal d2"><span class="n">09</span><h4>The gift is for you to give.</h4><p>When you have benefitted, invite one person whose discipline you trust. The room grows by hand, never publicly.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== TAMIL SAYING — Image 11: dream-life-tamil ===================== -->
+<section class="block">
+  <div class="container">
+    <article class="feature image-left reveal">
+      <div class="feature-figure">
+        <div class="figure-card">
+          <img src="assets/dream-life-tamil.png" alt="ஒரு புத்தகத்தின் மந்திரசக்தி — Your dream life is just Away from a Book? இந்த புத்தகம் மட்டும் இல்லாமல் இருந்திருந்தால் எவ்வளவு இழப்பு!!! SPECIAL GIFT. Whoever send feedback - get this gift video.">
+        </div>
+        <div class="figure-meta"><span class="num">Fig. 13</span><span>The room&rsquo;s recurring teaser</span></div>
+      </div>
+      <div class="feature-text">
+        <span class="role">A Saying Circulated In The Room</span>
+        <h2>Your dream life is just <em class="serif">one book away.</em></h2>
+        <p>The Tamil headline on this slide translates to <em>the magic-power of a single book.</em> The line beneath it reads, in spirit: <em>if this one book had never reached you, you would not know how much was missing.</em></p>
+        <p>The community circulates this slide for a reason. Most lives are not transformed by ten new habits. They are transformed by one book, read at the right hour, in the right state, in the company of people who are reading with you. The 3B3P room is built around this idea: three books, three practices, fewer than a hundred days.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+<!-- ===================== FOUNDER ===================== -->
+<section class="founder-section" id="founder">
+  <div class="container">
+    <div class="reveal">
+      <span class="eyebrow">A Note From The Instructor</span>
+      <h2>What was given to me, <em class="serif" style="color: var(--gold-warm);">I give to you.</em></h2>
+    </div>
+
+    <div class="founder-grid">
+      <div class="founder-quote reveal">
+        To give. To gain a name by giving. To live for that name. Anything less, the sage says, is not a life lived but a breath spent.
+        <cite>— After Thiruvalluvar · Kural 212</cite>
+      </div>
+      <div class="founder-body reveal d1">
+        <p>I was in debt for ten years. For eight of them I paid down a single rupee per stick of borrowing — a brutal arithmetic that began in 2012. In 2010 my friend told me to attend a session by Alan Pease in Australia. The travel cost ₹1.5 lakh I did not have. I went. That session became the turning point. Seven months after applying what I learned, the ocean of debt finished.</p>
+        <p>What I was given, I give. What I was taught, I teach. The teaching is free; the condition is discipline; the reward is yours. A separate business pays for itself, and from time to time, when it is right for you, an offer appears. It is never the cost of the teaching. The teaching has no cost.</p>
+        <div class="sig-card">
+          <div class="label">Your Instructor</div>
+          <div class="name">Sasi bro · Chennai</div>
+          <div class="role">3B3P · 20,000+ practitioners worldwide</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== CONTINUE THE SERIES ===================== -->
+<section class="block" style="padding-top: 1rem; padding-bottom: 0;">
+  <div class="container">
+    <div class="continue-series reveal">
+      <div class="continue-head">
+        <span class="label">Continue the Series</span>
+        <span class="alt">Series 3B3P · Days 02 – 35</span>
+      </div>
+      <div class="continue-grid">
+        <a class="next-session" href="#">
+          <div class="day">Day 02 · Tomorrow</div>
+          <h4>Shadchakrabhedan</h4>
+          <p>The ten-minute vagus activation. Your first practical ritual, taught live.</p>
+          <div class="when">Fri · 30 May · 5 AM</div>
+          <div class="arrow">Read Day 02 →</div>
+        </a>
+        <a class="next-session" href="#">
+          <div class="day">Day 03 · Sunday</div>
+          <h4>Secrets of the Brain</h4>
+          <p>Three hacks to keep the brain healthy and re-program the RAS for wealth.</p>
+          <div class="when">Sun · 31 May · 5 AM</div>
+          <div class="arrow">Read Day 03 →</div>
+        </a>
+        <a class="next-session" href="#">
+          <div class="day">Day 04 · Monday</div>
+          <h4>Arts &amp; Science of Sleep</h4>
+          <p>Five golden rules for a good night. Sixty minutes drawn from ten of the most-cited sleep books.</p>
+          <div class="when">Mon · 01 Jun · 5 AM</div>
+          <div class="arrow">Read Day 04 →</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CLOSING CTA ===================== -->
+<section class="closing-cta">
+  <div class="container">
+    <div class="reveal">
+      <div class="clock">04:33</div>
+      <h2>Tomorrow at five, the chakras.</h2>
+      <p>Set the alarm. Pin your friend. Save the admin&rsquo;s number. Be in one group. Read this page again before you sleep — the brain encodes what it revisits.</p>
+      <div class="cta-row">
+        <a class="btn btn-gold" href="#map">Open the 35-day map <span class="arrow">→</span></a>
+        <a class="btn btn-ghost" href="#community">Read the codex again</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <p class="footer-built">Built by Shaid</p>
+      <nav class="footer-socials" aria-label="Social links">
+        <a href="https://www.shaid360.com" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20"/></svg>
+          shaid360.com
+        </a>
+        <a href="https://www.instagram.com/ai360_with_shaid" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+          Instagram
+        </a>
+        <a href="https://www.linkedin.com/in/muhibbuddin-shaid-hakkeem-26a06921/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://youtube.com/@ai360_with_shaid" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="M10 9l5 3-5 3z" fill="currentColor"/></svg>
+          YouTube
+        </a>
+      </nav>
+      <p class="footer-tag">3B3P · The Master Keys · 2026</p>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  /* Reading progress bar */
+  const bar = document.getElementById('readProgress');
+  const updateProgress = () => {
+    const docH = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docH > 0 ? Math.min(100, (window.scrollY / docH) * 100) : 0;
+    bar.style.width = pct + '%';
+  };
+  document.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+
+  /* Scroll reveal */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* Auto-stagger on takeaways and precepts grids */
+  document.querySelectorAll('.takeaways ul').forEach(ul => {
+    ul.classList.add('reveal', 'stagger');
+    io.observe(ul);
+  });
+  document.querySelectorAll('.precepts-grid, .continue-grid').forEach(g => {
+    g.classList.add('reveal', 'stagger');
+    io.observe(g);
+  });
+
+  /* Count-up animation for stats */
+  const countObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const stat = entry.target;
+      if (stat.dataset.counted === 'true') return;
+      stat.dataset.counted = 'true';
+      const node = stat.querySelector('.counter');
+      const target = parseInt(node.dataset.target, 10);
+      const duration = 1200;
+      const startTime = performance.now();
+      const tick = (now) => {
+        const t = Math.min(1, (now - startTime) / duration);
+        const eased = 1 - Math.pow(1 - t, 3);
+        node.textContent = Math.round(eased * target);
+        if (t < 1) requestAnimationFrame(tick);
+        else node.textContent = target;
+      };
+      requestAnimationFrame(tick);
+      countObs.unobserve(stat);
+    });
+  }, { threshold: 0.4 });
+  document.querySelectorAll('.stat[data-counted="false"]').forEach(s => countObs.observe(s));
+
+  /* 35-day map */
+  const sessions = [
+    { d: 1,  l: 'Master Keys',     s: 'today',  m: true },
+    { d: 2,  l: 'Chakras',         s: 'next',   m: true },
+    { d: 3,  l: 'Brain · RAS',     s: 'future', m: true },
+    { d: 4,  l: 'Sleep',           s: 'future' },
+    { d: 5,  l: 'Gratitude',       s: 'future' },
+    { d: 6,  l: 'Magic Life',      s: 'future', m: true },
+    { d: 7,  l: 'Money Magnet',    s: 'future', m: true },
+    { d: 8,  l: 'Magic Day 1',     s: 'future' },
+    { d: 9,  l: 'Magic Day 2',     s: 'future' },
+    { d:10,  l: 'Magic Day 3',     s: 'future' },
+    { d:11,  l: 'Magic Day 4',     s: 'future' },
+    { d:12,  l: 'Magic Day 5',     s: 'future' },
+    { d:13,  l: 'Magic Day 6',     s: 'future' },
+    { d:14,  l: 'Magic Day 7',     s: 'future' },
+    { d:15,  l: 'Magic Day 8',     s: 'future' },
+    { d:16,  l: 'Magic Day 9',     s: 'future' },
+    { d:17,  l: 'Magic Day 10',    s: 'future' },
+    { d:18,  l: 'Magic Day 11',    s: 'future' },
+    { d:19,  l: 'Magic Day 12',    s: 'future' },
+    { d:20,  l: 'Magic Day 13',    s: 'future' },
+    { d:21,  l: 'Magic Day 14',    s: 'future' },
+    { d:22,  l: 'Magic Day 15',    s: 'future' },
+    { d:23,  l: 'Magic Day 16',    s: 'future' },
+    { d:24,  l: 'Magic Day 17',    s: 'future' },
+    { d:25,  l: 'Magic Day 18',    s: 'future' },
+    { d:26,  l: 'Magic Day 19',    s: 'future' },
+    { d:27,  l: 'Magic Day 20',    s: 'future' },
+    { d:28,  l: 'Magic Day 21',    s: 'future', m: true },
+    { d:29,  l: 'Ho’opono 1',      s: 'future' },
+    { d:30,  l: 'Ho’opono 2',      s: 'future' },
+    { d:31,  l: 'Ho’opono 3',      s: 'future' },
+    { d:32,  l: 'Ho’opono 4',      s: 'future' },
+    { d:33,  l: 'Ho’opono 5',      s: 'future' },
+    { d:34,  l: 'Ho’opono 6',      s: 'future' },
+    { d:35,  l: 'Completion',      s: 'future', m: true },
+  ];
+  const grid = document.getElementById('mapGrid');
+  const pad = n => n < 10 ? '0' + n : String(n);
+  sessions.forEach(s => {
+    const c = document.createElement('div');
+    c.className = 'map-cell ' + s.s + (s.m ? ' milestone' : '');
+    c.innerHTML = `<span class="no">${pad(s.d)}</span><span class="session">${s.l}</span>`;
+    grid.appendChild(c);
+  });
+</script>
+
+</body>
+</html>
