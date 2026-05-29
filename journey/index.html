@@ -961,6 +961,119 @@ footer{ background: var(--ink); color: var(--paper); padding: 4rem 0 3rem; }
 .article-meta .share a:hover{ background: var(--navy); color: var(--paper); border-color: var(--navy); }
 .article-meta .share svg{ width: 15px; height: 15px; }
 
+/* ---------- Reference videos section ---------- */
+.ref-videos{
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 2rem clamp(1.4rem, 3vw, 2.5rem);
+  box-shadow: var(--shadow-card);
+  max-width: 64rem;
+  margin: 0 auto;
+}
+.ref-videos-head{
+  display: flex;
+  align-items: baseline;
+  gap: 1.2rem;
+  border-bottom: 1px solid var(--line-soft);
+  padding-bottom: 1rem;
+  margin-bottom: 1.6rem;
+}
+.ref-videos-head .label{
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--rust);
+  font-weight: 500;
+}
+.ref-videos-head .summary{
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  flex: 1;
+}
+.ref-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.8rem;
+}
+@media (min-width: 820px){
+  .ref-grid{ grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+.ref-card{
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.ref-card .num-pill{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: flex-start;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  padding: 0.25rem 0.7rem 0.25rem 0.4rem;
+  background: rgba(19,20,24,0.04);
+  border-radius: 999px;
+}
+.ref-card .num-pill .num{
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--rust);
+  letter-spacing: 0;
+  text-transform: none;
+}
+.ref-card video{
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-card);
+  display: block;
+}
+.ref-card h3{
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.4rem;
+  margin: 0.2rem 0 0;
+  color: var(--navy);
+}
+.ref-card p{
+  margin: 0;
+  font-size: 0.94rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+.ref-card .meta-row{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.3rem;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.ref-card .meta-row .sep{ width: 1px; height: 11px; background: var(--line); }
+.ref-card .yt-link{
+  color: var(--rust);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 1px;
+}
+.ref-card .yt-link:hover{ color: var(--ink); }
+
 /* ---------- Reading progress bar ---------- */
 .read-progress{
   position: fixed;
@@ -1382,6 +1495,51 @@ footer{ background: var(--ink); color: var(--paper); padding: 4rem 0 3rem; }
         <li data-n="04"><span><strong>The half-formula behind the Law of Attraction.</strong>Three forces and eight blockers. Why most attempts fail before they leave the room.</span></li>
         <li data-n="05"><span><strong>The nine community precepts.</strong>The structural rules that protect the discipline of the room — and what gets you removed from it.</span></li>
       </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REFERENCE VIDEOS ===================== -->
+<section class="block" style="padding-top: 2rem; padding-bottom: 3rem;">
+  <div class="container">
+    <div class="ref-videos reveal">
+      <div class="ref-videos-head">
+        <span class="label">Reference Videos to Watch</span>
+        <span class="summary">Two short videos to watch before you go any deeper. Start with the first — the intro and the &ldquo;why&rdquo;.</span>
+      </div>
+      <div class="ref-grid">
+
+        <article class="ref-card">
+          <span class="num-pill"><span class="num">01</span> Watch First &middot; Intro</span>
+          <video controls preload="metadata" playsinline poster="">
+            <source src="../assets/videos/01-intro-why.mp4" type="video/mp4">
+            Your browser does not support embedded video. <a href="../assets/videos/01-intro-why.mp4">Download the video</a>.
+          </video>
+          <h3>Why &mdash; before you join the room.</h3>
+          <p>The intro slide of the entire community. What the group is, who it&rsquo;s for, what the discipline asks of you, and what to expect on the first morning. Watch this one first.</p>
+          <div class="meta-row">
+            <span>Duration · ~9:37</span>
+            <span class="sep"></span>
+            <span><a class="yt-link" href="https://www.youtube.com/watch?v=z-090KlJTk4" target="_blank" rel="noopener">YouTube source &rarr;</a></span>
+          </div>
+        </article>
+
+        <article class="ref-card">
+          <span class="num-pill"><span class="num">02</span> Watch Second &middot; Additional Context</span>
+          <video controls preload="metadata" playsinline poster="">
+            <source src="../assets/videos/02-additional-context.mp4" type="video/mp4">
+            Your browser does not support embedded video. <a href="../assets/videos/02-additional-context.mp4">Download the video</a>.
+          </video>
+          <h3>Additional context.</h3>
+          <p>The follow-up video. Watch this after the intro &mdash; it builds on what the first one set up.</p>
+          <div class="meta-row">
+            <span>Duration · ~9:53</span>
+            <span class="sep"></span>
+            <span><a class="yt-link" href="https://www.youtube.com/watch?v=-dwzaNiB7tk" target="_blank" rel="noopener">YouTube source &rarr;</a></span>
+          </div>
+        </article>
+
+      </div>
     </div>
   </div>
 </section>
